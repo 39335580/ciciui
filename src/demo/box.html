@@ -1,0 +1,33 @@
+<!-- 
+    盒子模型：w3c和ie盒子模型，主要区别为box-sizing属性，content-box为w3c盒子模型，border-box为ie盒子模型
+    盒子模型外观区别：w3c的盒子模型为非定长的，ie盒子模型为定长的，不会被动换行；
+-->
+<html>
+    <head>
+        <style>
+            div{
+                width: 200px;
+                height: 100px;
+                padding: 10px;
+                border: 1px solid #000;
+                margin: 20px;
+            }
+            .content-box{
+                box-sizing: content-box;
+            }
+            .border-box{
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 标准盒模型 -->
+        <div class="content-box">
+            我是content-box
+        </div>
+        <!-- 怪异盒模型 -->
+        <div class="border-box">
+            我是border-box
+        </div>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<!-- css选择器 -->
+
+<html>
+
+<head>
+    <style>
+        /* 通配符选择器：设置全局外边距和内边距全部为0 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* id选择器：设置id等于content的标签颜色为白色，背景为黑色 */
+        #content {
+            color: #fff;
+            background: #000;
+        }
+
+        /* 类选择器：设置class为list-item的标签的下边线为1px 实心 淡灰色 */
+        .list-item {
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* 标签选择器：设置h1标签的字体大小为20px */
+        h1 {
+            font-size: 20px;
+        }
+
+        /* 属性选择器：选择标签a的href为红色 */
+        a[href] {
+            color: red;
+        }
+
+        /* 属性选择器:选择input标签type=text的颜色为红色 */
+        input[type=text] {
+            color: red;
+        }
+
+        /* 属性选择器：选择input标签class=input的颜色为红色 ，注意这个为必须相等的类才会被选择，如果class中有多个类名则不能选择*/
+        input[class=input] {
+            color: red;
+        }
+
+        /* 属性选择器：包含属性选择class~=类名 ，注意这个class中有一个匹配的就会显示*/
+        input[class~=input] {
+            color: red;
+        }
+
+        /* 选择class=xxx 或者 class=xxx-前缀的类 */
+        div[class|=article] {
+            color: red;
+        }
+
+        /* 选择class=xxx为前缀的所有标签 */
+        div[class^=test] {
+            color: red;
+        }
+
+        /* class以disabled名称结尾的 */
+        [class$=disabled] {
+            display: block;
+        }
+
+        /* 类名称中包含disabled字符串的 */
+        [class*=disabled] {
+            color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- id选择器 -->
+    <div id="content">我是id选择器需要选中的元素</div>
+    <!-- 类选择器 -->
+    <ul>
+        <li class="list-item"></li>
+        <li class="list-item"></li>
+        <li class="list-item"></li>
+        <li class="list-item"></li>
+    </ul>
+    <h1>这是一个标题</h1>
+    <a href="/">返回主页</a>
+    <input type="text" value="我是属性选择器，type=input" />
+    <input type="text" class="input" value="我是属性选择器，按class=input" />
+    <input type="text" class="input text" value="我是属性选择器，按class~=input" />
+
+    <div class="article">我是article</div>
+    <div class="article-title">我是article-title</div>
+    <div class="article-content">我是article-content</div>
+    <div class="article_footer">我是article_footer，不是以artical-开头的</div>
+
+    <div class="test">我是article</div>
+    <div class="test-title">我是article-title</div>
+    <div class="test-content">我是article-content</div>
+    <div class="test_footer">我是article_footer，不是以artical-开头的</div>
+
+    <!-- HTML： -->
+    <button class="btn btn-disabled">禁用的按钮</button>
+    <select class="select select-disabled city-select"></select>
+    <input class="input input-disabled" value="禁用的输入框" />
+
+    <button class="btn btn-disabled">禁用的按钮</button>
+    <select class="select select-disabled city-select"></select>
+    <input class="input input-disabled" value="禁用的输入框" />
+
+
+
+</body>
+
+</html>
